@@ -1,0 +1,15 @@
+{
+  "name": "Suzuki Jimny 2027 Colombia",
+  "short_name": "Jimny 2027",
+  "description": "Versiones, precios, ficha técnica, fotos, videos y simulador de cuota del Suzuki Jimny 2027.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1E2A1F",
+  "theme_color": "#1E2A1F",
+  "lang": "es-CO",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

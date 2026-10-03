@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suzuki Jimny 2027 · Colombia</title>
+<meta name="description" content="Suzuki Jimny 2027 en Colombia: versiones de 3 y 5 puertas, precios, ficha técnica, fotos, videos, simulador de cuota y prueba de manejo.">
+<meta name="theme-color" content="#1E2A1F">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta property="og:title" content="Suzuki Jimny 2027 — el 4x4 de verdad en tamaño compacto">
+<meta property="og:image" content="https://www.suzukiautos.com.co/arquivos/jimny3p-bg-mobile.jpg?v=638671330427770000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --olivo:#1E2A1F; --olivo2:#27362A; --olivo3:#33453A;
+  --arena:#ECE5D3; --arena2:#B9B29E; --lima:#CFD62B; --barro:#9C7A4E;
+  --f:'Archivo', 'Arial Narrow', Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--olivo);color:var(--arena);font-family:var(--f);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+img{max-width:100%;display:block}
+a{color:var(--lima)}
+:focus-visible{outline:3px solid var(--lima);outline-offset:3px}
+h1,h2,h3{font-stretch:125%;font-weight:850;line-height:1.02;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,7vw,3.4rem)}
+h3{font-size:1.25rem;font-stretch:110%}
+p{margin:.6em 0;max-width:62ch}
+.envoltura{width:min(1080px,100% - 40px);margin-inline:auto}
+section{padding:72px 0 24px}
+.intro{color:var(--arena2);font-size:1.05rem}
+
+/* barra superior */
+.barra{position:sticky;top:0;z-index:20;background:rgba(30,42,31,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--olivo3);padding-top:env(safe-area-inset-top,0px);margin-top:calc(-1 * env(safe-area-inset-top,0px))}
+.barra .envoltura{display:flex;align-items:center;justify-content:space-between;height:60px}
+.marca{font-stretch:125%;font-weight:900;font-size:1.25rem;text-decoration:none;color:var(--arena)}
+.marca span{color:var(--arena2);font-weight:500;font-stretch:100%;font-size:.85rem;margin-left:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font:700 1rem var(--f);cursor:pointer;text-decoration:none;background:var(--lima);color:var(--olivo)}
+.btn.sec{background:transparent;color:var(--arena);box-shadow:inset 0 0 0 2px var(--olivo3)}
+.btn.chico{padding:8px 14px;font-size:.9rem}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* portada */
+.portada{position:relative;padding:0;overflow:hidden}
+.portada .foto{position:relative;height:min(78vh,640px);background:var(--olivo2)}
+.portada .foto img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.portada .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,42,31,0) 35%,rgba(30,42,31,.75) 72%,var(--olivo) 100%)}
+.topo{position:absolute;inset:0;width:100%;height:100%;opacity:.35;pointer-events:none;z-index:1}
+.portada .texto{position:relative;z-index:2;margin-top:-210px}
+.portada h1{font-size:clamp(3.4rem,15vw,8.5rem);font-stretch:125%;font-weight:900;letter-spacing:-.03em}
+.portada h1 small{display:block;font-size:.26em;font-weight:600;font-stretch:100%;letter-spacing:0;color:var(--arena2);margin-top:10px;line-height:1.3}
+.precio-desde{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:22px 0 6px}
+.precio-desde b{font-size:clamp(1.8rem,6vw,2.6rem);font-stretch:112%;font-weight:850;color:var(--lima)}
+.precio-desde span{color:var(--arena2)}
+.nota{font-size:.82rem;color:var(--arena2)}
+.selector{display:inline-flex;background:var(--olivo2);border-radius:999px;padding:4px;margin:18px 0}
+.selector button{border:0;background:transparent;color:var(--arena);font:700 .95rem var(--f);padding:10px 18px;border-radius:999px;cursor:pointer}
+.selector button[aria-pressed="true"]{background:var(--arena);color:var(--olivo)}
+.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+/* datos clave */
+.claves{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));border-top:1px solid var(--olivo3);border-bottom:1px solid var(--olivo3);margin-top:44px}
+.claves div{padding:18px 14px 18px 0}
+.claves b{display:block;font-size:2rem;font-stretch:118%;font-weight:850;line-height:1}
+.claves span{color:var(--arena2);font-size:.9rem}
+
+/* beneficios */
+.beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:0 40px;margin-top:28px}
+.beneficio{padding:22px 0;border-top:1px solid var(--olivo3);display:grid;grid-template-columns:44px 1fr;gap:14px}
+.beneficio svg{width:36px;height:36px;stroke:var(--lima);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.beneficio p{margin:.35em 0 0;color:var(--arena2)}
+.region{margin-top:34px;padding:22px 24px;border-left:4px solid var(--lima);background:var(--olivo2)}
+.region h3{margin-bottom:6px}
+
+/* ángulos */
+.angulos{margin-top:22px;background:var(--olivo2);border-radius:20px;padding:18px}
+.angulos svg{width:100%;height:auto;display:block}
+.ang-leyenda{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.ang-leyenda div{text-align:center}
+.ang-leyenda b{display:block;font-size:2.2rem;font-stretch:120%;font-weight:850;color:var(--lima);line-height:1}
+.ang-leyenda span{font-size:.85rem;color:var(--arena2)}
+
+/* versiones */
+.pestanas{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}
+.pestanas button{border:2px solid var(--olivo3);background:transparent;color:var(--arena);font:700 1rem var(--f);padding:10px 18px;border-radius:999px;cursor:pointer}
+.pestanas button[aria-selected="true"]{background:var(--lima);border-color:var(--lima);color:var(--olivo)}
+.version-foto{max-height:260px;margin:16px auto 6px;object-fit:contain}
+.version{display:grid;grid-template-columns:1fr auto;gap:6px 18px;padding:22px 0;border-top:1px solid var(--olivo3)}
+.version h3{grid-column:1}
+.version .p{grid-column:2;grid-row:1;font-size:1.35rem;font-weight:850;font-stretch:112%;color:var(--lima);white-space:nowrap}
+.version .caja{grid-column:1/-1;color:var(--arena2);font-size:.95rem}
+.version ul{grid-column:1/-1;margin:6px 0 4px;padding-left:20px}
+.version li{margin:3px 0}
+.version .acc{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+@media (max-width:520px){.version{grid-template-columns:1fr}.version .p{grid-column:1;grid-row:auto}}
+
+/* galería */
+.galeria{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px 0 12px;-webkit-overflow-scrolling:touch}
+.galeria figure{margin:0;flex:0 0 min(84%,520px);scroll-snap-align:start}
+.galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--olivo2)}
+.galeria figcaption{padding:10px 2px 0}
+.galeria figcaption b{display:block}
+.galeria figcaption span{color:var(--arena2);font-size:.92rem}
+.sinfoto{display:flex !important;align-items:center;justify-content:center;aspect-ratio:4/3;border-radius:14px;background:var(--olivo2);color:var(--arena2);font-size:.9rem;text-align:center;padding:20px}
+
+/* videos */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:22px}
+.video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer;border:0;padding:0;width:100%}
+.video img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.video .play{position:absolute;inset:0;display:grid;place-items:center}
+.video .play i{width:64px;height:64px;border-radius:50%;background:var(--lima);display:grid;place-items:center}
+.video .play i::after{content:"";border-left:20px solid var(--olivo);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-tit{margin:8px 0 0;font-weight:700}
+.video-tit span{display:block;font-weight:400;color:var(--arena2);font-size:.9rem}
+
+/* ficha */
+.tabla-scroll{overflow-x:auto;margin-top:20px;border-radius:14px;border:1px solid var(--olivo3)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--olivo3);vertical-align:top}
+thead th{background:var(--olivo2);font-stretch:112%;position:sticky;top:0}
+tbody th{font-weight:500;color:var(--arena2);width:34%}
+tr.grupo th{background:var(--olivo3);color:var(--arena);font-weight:800;font-stretch:112%}
+.descargas{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+/* costos */
+.costos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0 30px;margin-top:18px}
+.costo{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--olivo3)}
+.costo b{white-space:nowrap}
+
+/* cuota y contacto */
+.panel{background:var(--olivo2);border-radius:20px;padding:22px;margin-top:22px}
+.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+label{display:block;font-weight:700;font-size:.92rem;margin-bottom:6px}
+input,select,textarea{width:100%;font:500 1rem var(--f);color:var(--arena);background:var(--olivo);border:2px solid var(--olivo3);border-radius:12px;padding:12px}
+input[type=range]{padding:0;accent-color:var(--lima);border:0;background:transparent}
+.resultado{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0 14px}
+.resultado div{border-top:2px solid var(--olivo3);padding-top:10px}
+.resultado b{display:block;font-size:1.6rem;font-stretch:112%;font-weight:850}
+.resultado .grande b{color:var(--lima);font-size:2.1rem}
+.resultado span{color:var(--arena2);font-size:.88rem}
+.aviso{font-size:.82rem;color:var(--arena2)}
+
+footer{padding:40px 0 30px;margin-top:50px;border-top:1px solid var(--olivo3);font-size:.85rem;color:var(--arena2)}
+footer .credito{color:var(--arena);font-weight:700}
+
+/* navegación inferior */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(30,42,31,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--olivo3);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabbar ul{list-style:none;margin:0 auto;padding:0;display:flex;max-width:640px}
+.tabbar li{flex:1}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 0 8px;font-size:.72rem;font-weight:700;color:var(--arena2);text-decoration:none}
+.tabbar a.activo{color:var(--lima)}
+.tabbar svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.instalar{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:31;background:var(--arena);color:var(--olivo);border-radius:16px;padding:14px 14px 14px 18px;display:none;align-items:center;gap:12px;max-width:560px;margin:auto}
+.instalar.ver{display:flex}
+.instalar p{margin:0;flex:1;font-size:.92rem;font-weight:600}
+.instalar .btn{background:var(--olivo);color:var(--arena)}
+.instalar .x{background:none;border:0;font-size:1.2rem;cursor:pointer;color:var(--olivo)}
+
+/* control de sugerido (Vibras Motor) */
+dialog{border:0;padding:0;width:min(560px,100%);max-height:92vh;border-radius:20px 20px 0 0;margin:auto auto 0;background:var(--olivo2);color:var(--arena)}
+@media(min-width:700px){dialog{border-radius:20px;margin:auto}}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+.hoja{padding:22px 22px calc(26px + env(safe-area-inset-bottom,0px));overflow-y:auto;max-height:92vh}
+.hoja-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.hoja-cab h3{font-size:1.7rem}
+.cerrar{border:0;background:var(--olivo3);color:var(--arena);width:40px;height:40px;border-radius:50%;font-size:22px;cursor:pointer;flex:none}
+.hoja .campos{gap:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;color:var(--arena2);margin:16px 0 6px;font-weight:400}
+.consent input{width:20px;height:20px;margin-top:2px;accent-color:var(--lima);flex:none}
+.codigo{font-stretch:118%;font-weight:900;font-size:clamp(1.3rem,6.2vw,2rem);color:var(--olivo);max-width:100%;background:var(--lima);padding:10px 16px;border-radius:12px;display:inline-block;margin:6px 0 4px;white-space:nowrap;letter-spacing:.02em}
+.paso-wa{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding:16px 0;border-top:1px solid var(--olivo3)}
+.paso-wa .n{width:34px;height:34px;border-radius:50%;background:var(--olivo3);display:grid;place-items:center;font-weight:900}
+.paso-wa.hecho .n{background:var(--lima);color:var(--olivo)}
+.paso-wa p{margin:.2em 0 .7em;color:var(--arena2);font-size:.92rem}
+.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.como-codigo{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 28px;margin-top:22px}
+.como-codigo div{border-top:2px solid var(--lima);padding:14px 0}
+.como-codigo p{color:var(--arena2);margin:.3em 0 0}
+.vm-sello{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;color:var(--arena2);text-decoration:none;border:1px solid var(--olivo3);border-radius:999px;padding:6px 12px;margin-top:10px}
+.vm-sello i{width:10px;height:10px;border-radius:50%;background:#EB0A1E}
+
+.cargando{animation:aparece .9s ease-out both}
+@keyframes aparece{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="envoltura">
+    <a class="marca" href="#inicio">Jimny<span>2027 · Vibras Motor</span></a>
+    <a class="btn chico" id="waTop" href="#sugerido-info">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>
+      Lo quiero
+    </a>
+  </div>
+</header>
+
+<main>
+<!-- PORTADA -->
+<section class="portada" id="inicio">
+  <div class="foto">
+    <img id="heroImg" src="https://www.suzukiautos.com.co/arquivos/jimny3p-bg-mobile.jpg?v=638671330427770000" alt="Suzuki Jimny 3 puertas en terreno destapado" fetchpriority="high">
+    <svg class="topo" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="none" stroke="#CFD62B" stroke-width=".6">
+        <path d="M-10 250 C60 220 110 260 180 230 S300 190 410 220"/>
+        <path d="M-10 265 C70 238 120 275 190 246 S310 208 410 238"/>
+        <path d="M-10 280 C80 256 130 290 200 262 S320 226 410 256"/>
+        <path d="M-10 295 C90 274 140 305 210 278 S330 244 410 274"/>
+      </g>
+    </svg>
+  </div>
+  <div class="envoltura texto cargando">
+    <h1>Jimny<small>El 4x4 de verdad, en tamaño compacto. Modelo 2027 en Colombia.</small></h1>
+    <div class="selector" role="group" aria-label="Carrocería">
+      <button type="button" data-carro="3p" aria-pressed="true">3 puertas</button>
+      <button type="button" data-carro="5p" aria-pressed="false">5 puertas</button>
+    </div>
+    <div class="precio-desde"><b id="heroPrecio">$109.990.000</b><span id="heroVersion">Jimny 3 puertas GL MT con ADAS</span></div>
+    <p class="nota">Precio de referencia en concesionario autorizado, octubre de 2026. Puede incluir bono sujeto a crédito con entidades aliadas.</p>
+    <div class="acciones">
+      <a class="btn" href="#versiones">Ver versiones y precios</a>
+      <button class="btn sec" type="button" data-quiero="" data-motivo="Prueba de manejo">Pedir prueba de manejo</button>
+    </div>
+    <div class="claves">
+      <div><b>100 hp</b><span>Motor 1.5 L a gasolina</span></div>
+      <div><b>4L</b><span>4x4 con caja reductora (bajo)</span></div>
+      <div><b>21 cm</b><span>Altura libre al piso</span></div>
+      <div><b id="claveLargo">3,65 m</b><span>Largo total: cabe en cualquier trocha</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="envoltura">
+    <h2>Por qué un Jimny</h2>
+    <p class="intro">No es una camioneta urbana con apariencia de campero. Es un todoterreno de verdad, construido como los grandes, pero del tamaño de un carro de ciudad.</p>
+    <div class="beneficios">
+      <div class="beneficio"><svg viewBox="0 0 36 36"><rect x="4" y="10" width="28" height="16" rx="2"/><path d="M4 18h28M11 10v16M18 10v16M25 10v16"/></svg>
+        <div><h3>Chasís tipo escalera</h3><p>Un bastidor independiente que resiste mucho más la torsión que una carrocería monocasco. Aguanta huecos, piedras y carga sin sufrir.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><circle cx="9" cy="24" r="5"/><circle cx="27" cy="24" r="5"/><path d="M9 24h18M14 24V12h8v12"/></svg>
+        <div><h3>4x4 ALLGRIP PRO con bajo</h3><p>Usted elige con una palanca: 2H para carretera y ahorrar gasolina, 4H para destapado y barro, 4L con caja reductora para subidas fuertes o salir de un atasco.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><path d="M6 26h24M10 26V14l8-6 8 6v12"/><path d="M14 20h8"/></svg>
+        <div><h3>Ejes rígidos con resortes</h3><p>Suspensión de eje rígido adelante y atrás con resortes helicoidales: las ruedas se quedan pegadas al suelo en terreno disparejo y el viaje es más estable.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><path d="M18 4l12 5v9c0 8-5 12-12 14C11 30 6 26 6 18V9z"/><path d="M13 18l4 4 7-8"/></svg>
+        <div><h3>Frenado tipo LSD</h3><p>Si una rueda patina en el aire o en el barro, el sistema la frena sola y manda la fuerza a la que sí tiene agarre. Sale donde otros se quedan.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><path d="M4 28l10-14 6 8 4-5 8 11z"/><path d="M14 14l2-6"/></svg>
+        <div><h3>Ayuda en subidas y bajadas</h3><p>Arranque en pendiente para que no se devuelva al soltar el freno, y control de descenso que frena por usted en bajadas empinadas.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><rect x="5" y="8" width="26" height="20" rx="3"/><path d="M5 14h26M11 21h6"/></svg>
+        <div><h3>Pequeño y liviano</h3><p>Entre 1.090 y 1.215 kg y menos de 4 m de largo. Parquea en cualquier lado, gira cerrado y pasa por caminos donde una camioneta grande no cabe.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="12"/><path d="M18 10v8l5 4"/></svg>
+        <div><h3>Mantenimiento económico</h3><p>Revisiones cada 5.000 km desde $246.140 según la tabla oficial de Suzuki. Motor 1.5 L sencillo y probado, con repuestos en toda la red Suzuki del país.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><path d="M8 28V12M16 28V6M24 28V16M32 28H4"/></svg>
+        <div><h3>Guarda su valor</h3><p>Es uno de los carros más buscados de segunda en Colombia. Un Jimny usado se sigue ofreciendo por encima de $60 millones, y los de pocos años rondan los $100 millones.</p></div></div>
+      <div class="beneficio"><svg viewBox="0 0 36 36"><path d="M10 6h16v24H10z"/><path d="M15 26h6M14 11h8"/></svg>
+        <div><h3>Conectado y seguro</h3><p>Pantalla táctil con Apple CarPlay y Android Auto, ABS, control de estabilidad ESP, ISOFIX y hasta 6 airbags en la versión de 5 puertas. Versiones 2027 de 3 puertas con paquete ADAS.</p></div></div>
+    </div>
+    <div class="region">
+      <h3>Hecho para la vida en el Bajo Cauca, Córdoba y Sucre</h3>
+      <p>Vías destapadas en invierno, entradas a finca, cruces de quebrada, lomas en la zona minera y la ciudad en el mismo día. El Jimny pasa todo eso con la tracción que hace falta y gasta como un carro pequeño cuando vuelve a la carretera en 2H.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ÁNGULOS -->
+<section id="angulos">
+  <div class="envoltura">
+    <h2>Por dónde pasa</h2>
+    <p class="intro">Los ángulos dicen qué tan empinada puede ser una subida, un borde o una loma sin que el carro roce. Mientras más grandes, mejor.</p>
+    <div class="angulos">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Esquema de ángulos de ataque, ventral y salida del Jimny">
+        <line x1="0" y1="222" x2="640" y2="222" stroke="#33453A" stroke-width="2"/>
+        <g id="carro" fill="none" stroke="#ECE5D3" stroke-width="3" stroke-linejoin="round">
+          <path id="carroCuerpo" d=""/>
+          <circle id="ruedaT" r="34" fill="#1E2A1F"/>
+          <circle id="ruedaD" r="34" fill="#1E2A1F"/>
+        </g>
+        <g stroke="#CFD62B" stroke-width="2.5" fill="none" stroke-dasharray="6 5">
+          <line id="lAtaque"/><line id="lSalida"/><polyline id="lVentral"/>
+        </g>
+        <text x="320" y="252" text-anchor="middle" fill="#B9B29E" font-size="13" font-family="Archivo, sans-serif">Esquema ilustrativo, no a escala</text>
+      </svg>
+      <div class="ang-leyenda">
+        <div><b id="vSalida">49°</b><span>Ángulo de salida</span></div>
+        <div><b id="vVentral">28°</b><span>Ángulo ventral</span></div>
+        <div><b id="vAtaque">37°</b><span>Ángulo de ataque</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERSIONES -->
+<section id="versiones">
+  <div class="envoltura">
+    <h2>Versiones y precios 2027</h2>
+    <p class="intro">Precios de venta al público de referencia, en pesos colombianos, consultados el 2 de octubre de 2026.</p>
+    <div class="pestanas" role="tablist" aria-label="Carrocería">
+      <button role="tab" type="button" data-tab="3p" aria-selected="true">Jimny 3 puertas</button>
+      <button role="tab" type="button" data-tab="5p" aria-selected="false">Jimny 5 puertas</button>
+    </div>
+    <img class="version-foto" id="versionFoto" src="https://suzukiderco.vteximg.com.br/arquivos/ids/155709-1000-1000/Suzuki-Jimny-limon.png?v=637551784774100000" alt="Suzuki Jimny 3 puertas color lima" loading="lazy">
+    <div id="listaVersiones" role="tabpanel"></div>
+    <p class="nota">Precios tomados de concesionario autorizado Suzuki (Autozen, sedes Medellín, Rionegro, Montería y Sincelejo). En la página oficial de Suzuki Colombia el precio sugerido aparece desde $116.990.000 para el 3 puertas y desde $123.990.000 para el 5 puertas, con bono de descuento de $5.000.000. En TuCarro y Mercado Libre se ven Jimny 2027 0 km entre $112.000.000 y $123.490.000. Confirme precio final, bonos y disponibilidad con el asesor.</p>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="envoltura">
+    <h2>Fotos</h2>
+    <p class="intro">Deslice para ver el Jimny por dentro y por fuera.</p>
+    <div class="galeria" id="galeriaFotos"></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="envoltura">
+    <h2>Véalo andar</h2>
+    <p class="intro">Pruebas y reseñas hechas en Colombia y en terreno destapado. Toque un video para reproducirlo.</p>
+    <div class="videos" id="listaVideos"></div>
+  </div>
+</section>
+
+<!-- FICHA TÉCNICA -->
+<section id="ficha">
+  <div class="envoltura">
+    <h2>Ficha técnica</h2>
+    <p class="intro">Los dos Jimny lado a lado. Deslice la tabla si está en el celular.</p>
+    <div class="tabla-scroll"><table id="tablaFicha"><thead><tr><th scope="col">Dato</th><th scope="col">Jimny 3 puertas</th><th scope="col">Jimny 5 puertas</th></tr></thead><tbody></tbody></table></div>
+    <div class="descargas">
+      <a class="btn sec chico" href="https://suzukiderco.vtexcommercestable.com.br/api/dataentities/FI/documents/fbd40b95-6fe2-49c8-ab88-b3039a11fe13/filename/attachments/FichaTecnica-Jimny-3Puertas-2026-Web-May28.pdf" target="_blank" rel="noopener">Ficha oficial 3 puertas (PDF)</a>
+      <a class="btn sec chico" href="https://suzukiderco.vtexcommercestable.com.br/api/dataentities/FI/documents/94488d8d-ed5e-4374-b3db-7105679ee628/filename/attachments/FichaTecnica-Nueva-Jimny5P.pdf" target="_blank" rel="noopener">Ficha oficial 5 puertas (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- COSTOS -->
+<section id="costos">
+  <div class="envoltura">
+    <h2>Lo que cuesta tenerlo</h2>
+    <p class="intro">Valores publicados por Suzuki Colombia para el Jimny. La matrícula cambia según el municipio donde se registre.</p>
+    <div class="costos">
+      <div class="costo"><span>SOAT de referencia</span><b>$582.300</b></div>
+      <div class="costo"><span>Matrícula de referencia</span><b>$1.975.391</b></div>
+      <div class="costo"><span>Revisión 5.000, 15.000, 25.000 km… (cada 10.000)</span><b>$246.140</b></div>
+      <div class="costo"><span>Mantenimiento 10.000 y 70.000 km</span><b>$528.879</b></div>
+      <div class="costo"><span>Mantenimiento 20.000, 40.000 y 80.000 km</span><b>$603.281</b></div>
+      <div class="costo"><span>Mantenimiento 30.000, 60.000 y 90.000 km</span><b>$865.011</b></div>
+      <div class="costo"><span>Mantenimiento 50.000 y 100.000 km</span><b>$697.858</b></div>
+    </div>
+    <p class="nota">Algunas revisiones tienen adicionales según kilometraje y tipo de caja. Consulte la tabla completa con el taller autorizado.</p>
+  </div>
+</section>
+
+<!-- CUOTA -->
+<section id="cuota">
+  <div class="envoltura">
+    <h2>Calcule su cuota</h2>
+    <p class="intro">Una simulación rápida para saber cuánto pagaría al mes. La tasa es editable porque cambia según el banco y su perfil.</p>
+    <div class="panel">
+      <div class="campos">
+        <div><label for="sVersion">Versión</label><select id="sVersion"></select></div>
+        <div><label for="sPrecio">Precio del carro</label><input id="sPrecio" inputmode="numeric"></div>
+        <div><label for="sInicial">Cuota inicial: <span id="sInicialTxt">30%</span></label><input id="sInicial" type="range" min="0" max="80" step="5" value="30"></div>
+        <div><label for="sPlazo">Plazo</label><select id="sPlazo"><option value="24">24 meses</option><option value="36">36 meses</option><option value="48">48 meses</option><option value="60" selected>60 meses</option><option value="72">72 meses</option><option value="84">84 meses</option></select></div>
+        <div><label for="sTasa">Tasa mes vencido (%)</label><input id="sTasa" type="number" step="0.01" min="0" value="1.50"></div>
+      </div>
+      <div class="resultado">
+        <div class="grande"><b id="rCuota">—</b><span>Cuota mensual aproximada</span></div>
+        <div><b id="rInicial">—</b><span>Cuota inicial</span></div>
+        <div><b id="rFinanciar">—</b><span>Valor a financiar</span></div>
+        <div><b id="rTotal">—</b><span>Total pagado en cuotas</span></div>
+      </div>
+      <button class="btn" type="button" id="btnSimulacion">Quiero este crédito</button>
+      <p class="aviso">Cálculo ilustrativo con cuota fija. No incluye seguros, SOAT, matrícula ni otros cobros del banco. No es una oferta de crédito.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LO QUIERO / CONTROL DE SUGERIDO -->
+<section id="prueba">
+  <div class="envoltura">
+    <h2>Lo quiero</h2>
+    <p class="intro" id="sugerido-info">Pida su cotización, su crédito o su prueba de manejo. Le damos un código de referido Vibras Motor que lo identifica en el concesionario y le asegura atención personal de principio a fin.</p>
+    <div class="como-codigo">
+      <div><h3>1. Llene sus datos</h3><p>Nombre, celular, municipio, versión y cómo piensa pagar. Toma un minuto.</p></div>
+      <div><h3>2. Reciba su código</h3><p>Un código único como <b>VM-SUZ-261003-4821</b>, con la fecha en hora de Colombia.</p></div>
+      <div><h3>3. Lo atendemos</h3><p>Su asesor Vibras Motor lo conecta con el concesionario Suzuki y lo acompaña hasta la entrega.</p></div>
+    </div>
+    <div class="acciones" style="margin-top:18px">
+      <button class="btn" type="button" data-quiero="" data-motivo="Cotización">Quiero cotizar</button>
+      <button class="btn sec" type="button" data-quiero="" data-motivo="Prueba de manejo">Pedir prueba de manejo</button>
+    </div>
+    <a class="vm-sello" id="vmSello" href="#" target="_blank" rel="noopener"><i></i>Una app de la vitrina Vibras Motor</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>Precios consultados el 2 de octubre de 2026 en el concesionario autorizado Autozen, la página oficial suzukiautos.com.co y portales de venta (TuCarro, Mercado Libre). Los precios y bonos cambian sin previo aviso y algunos están sujetos a compra a crédito con entidades aliadas de Derco. Las características definitivas son las de la orden de pedido.</p>
+    <p>Fotos tomadas del sitio oficial de Suzuki Autos Colombia, con fines ilustrativos. Videos de terceros alojados en YouTube; sus derechos pertenecen a cada canal. Suzuki, Jimny y ALLGRIP son marcas de sus respectivos titulares. Esta app es una propuesta comercial independiente.</p>
+    <p>Vibras Motor es un canal de referidos independiente de Vibras Positivas HM: no es concesionario ni representante oficial de Suzuki. La venta, la factura y la garantía son del concesionario.</p>
+    <p class="credito">Desarrollada por Vibras Positivas HM — Derechos de Autor Reservados</p>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Navegación">
+  <ul>
+    <li><a href="#inicio" class="activo"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Inicio</a></li>
+    <li><a href="#versiones"><svg viewBox="0 0 24 24"><path d="M4 16V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7"/><rect x="2" y="16" width="20" height="3" rx="1"/><circle cx="7" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>Precios</a></li>
+    <li><a href="#ficha"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Ficha</a></li>
+    <li><a href="#cuota"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M16 11v4"/></svg>Cuota</a></li>
+    <li><a href="#prueba"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4-7.5L21 3l-1 4.5A9 9 0 0 1 21 12z"/></svg>Contacto</a></li>
+  </ul>
+</nav>
+
+<dialog id="sugerido" aria-labelledby="sgTit"><div class="hoja" id="sgIn"></div></dialog>
+
+<div class="instalar" id="instalar" role="dialog" aria-label="Instalar app">
+  <p>Instale el Jimny 2027 en su celular y ábralo como una app.</p>
+  <button class="btn chico" type="button" id="btnInstalar">Instalar</button>
+  <button class="x" type="button" id="btnCerrarInst" aria-label="Cerrar">✕</button>
+</div>
+
+<script>
+/* ====== CONFIGURACIÓN: cambie aquí el asesor ====== */
+const CONFIG = {
+  // Usted: recibe SIEMPRE el aviso de cada cliente, con su código
+  harold: { nombre: 'Harold Marín', marca: 'Vibras Motor', whatsapp: '573117700431' },
+  // Asesor del concesionario Suzuki que firme el acuerdo (con 57 adelante).
+  // Vacío = el cliente solo le escribe a Harold y Harold lo pasa al concesionario.
+  concesionario: { nombre: 'concesionario Suzuki', whatsapp: '' },
+  prefijo: 'VM-SUZ',
+  vibrasMotor: 'https://vibras-motor.netlify.app/'
+};
+const AÑO_MODELO = '2027';
+
+const IMG = 'https://suzukiderco.vtexassets.com/arquivos/';
+const CARROS = {
+  '3p': {
+    nombre: 'Jimny 3 puertas',
+    hero: 'https://www.suzukiautos.com.co/arquivos/jimny3p-bg-mobile.jpg?v=638671330427770000',
+    foto: 'https://suzukiderco.vteximg.com.br/arquivos/ids/155709-1000-1000/Suzuki-Jimny-limon.png?v=637551784774100000',
+    largo: '3,65 m',
+    angulos: { ataque: 37, ventral: 28, salida: 49 },
+    ejes: [200, 420], cuerpo: [128, 492],
+    versiones: [
+      { nombre: 'GL MT con ADAS', caja: 'Caja mecánica de 5 velocidades', precio: 109990000, puntos: [
+        'Paquete ADAS de asistencias a la conducción',
+        '2 airbags frontales, ABS, control de estabilidad ESP y ayuda de arranque en pendiente',
+        'Anclajes ISOFIX para dos sillas de niño',
+        'Rines de aleación de 15" con llantas 195/80 R15',
+        'Aire acondicionado, faros halógenos y antiniebla delanteros' ] },
+      { nombre: 'GLX AT con ADAS', caja: 'Caja automática de 4 velocidades', precio: 114990000, puntos: [
+        'Todo lo de la GL, más:',
+        'Faros LED tipo proyector con encendido automático y lavafaros',
+        'Aire acondicionado automático',
+        'Timón forrado en cuero con control crucero' ] }
+    ]
+  },
+  '5p': {
+    nombre: 'Jimny 5 puertas',
+    hero: 'https://www.suzukiautos.com.co/arquivos/jimny5p-bg-mobile.jpg?v=638671330506430000',
+    foto: IMG + 'jimny-5-puertas-glx-mt.png?v=638461426328000000',
+    largo: '3,99 m',
+    angulos: { ataque: 36, ventral: 24, salida: 50 },
+    ejes: [170, 450], cuerpo: [98, 522],
+    versiones: [
+      { nombre: 'GLX MT', caja: 'Caja mecánica de 5 velocidades', precio: 120990000, puntos: [
+        '6 airbags: frontales, laterales y de cortina',
+        'ABS, ESP, ayuda de arranque en pendiente y control de descenso',
+        'Faros LED tipo proyector automáticos, lavafaros y antiniebla',
+        'Pantalla táctil con Apple CarPlay y Android Auto, climatizador automático',
+        'Sensores de parqueo traseros y cámara de reversa' ] },
+      { nombre: 'GLX AT', caja: 'Caja automática de 4 velocidades', precio: 124990000, puntos: [
+        'El mismo equipamiento de la GLX MT con caja automática' ] },
+      { nombre: 'GLX MT Versión Total', caja: 'Caja mecánica de 5 velocidades', precio: 126330000, puntos: [
+        'GLX más accesorios de aventura instalados:',
+        'Canastilla de techo, escalera y estribos',
+        'Bombillos LED para las exploradoras' ] },
+      { nombre: 'GLX AT Versión Total', caja: 'Caja automática de 4 velocidades', precio: 130330000, puntos: [
+        'Versión Total con caja automática' ] },
+      { nombre: 'Rino Edition MT', caja: 'Caja mecánica de 5 velocidades', precio: 133320000, puntos: [
+        'Edición especial de concesionario con look expedición:',
+        'Parrilla de techo, escalera, estribos y porta combustible',
+        'Llantas todoterreno y parrilla frontal',
+        'Bombillos LED para las exploradoras' ] },
+      { nombre: 'Rino Edition AT', caja: 'Caja automática de 4 velocidades', precio: 137320000, puntos: [
+        'Rino Edition con caja automática' ] }
+    ]
+  }
+};
+
+const FOTOS = [
+  ['jimny3p-bg', 'https://www.suzukiautos.com.co/arquivos/jimny3p-bg-mobile.jpg?v=638671330427770000', 'Jimny 3 puertas', 'El campero clásico de cuatro puestos, corto y ágil.'],
+  ['5p-bg', 'https://www.suzukiautos.com.co/arquivos/jimny5p-bg-mobile.jpg?v=638671330506430000', 'Jimny 5 puertas', '34 cm más largo, puertas traseras y baúl de 211 litros.'],
+  ['esp3', IMG + 'especificaciones-jimny3p-suzuki.jpg?v=638084661975330000', 'Hecho para el barro', 'Chasís de escalera, ejes rígidos y 4x4 con bajo.'],
+  ['ext3', IMG + 'exterior-jimny3p-suzuki.jpg?v=638084694508130000', 'Por fuera', 'Extensores de guardabarros, repuesto en la compuerta y 21 cm al piso.'],
+  ['int3', IMG + 'interior-jimny3p.suzuki.jpg?v=638084673718330000', 'Cabina 3 puertas', 'Mandos al timón, detalles cromados y pantalla táctil.'],
+  ['seg3', IMG + 'seguridad-jimny3p-suzuki.jpg?v=638085321108070000', 'Seguridad', 'ABS, ESP, airbags, ISOFIX y barras laterales contra impactos.'],
+  ['tec3', IMG + 'tecnologia-jimny3p-suzuki.jpg?v=638085321108070000', 'Motor 1.5 L', '100 hp y 130 Nm en un carro de poco más de una tonelada.'],
+  ['ext5', IMG + 'exterior-jimny5p-suzuki.jpg?v=638671096904470000', 'Jimny 5 puertas por fuera', 'La misma estampa, ahora con espacio para toda la familia.'],
+  ['int5', IMG + 'interior-jimny5p.suzuki.jpg?v=638671245268900000', 'Cabina 5 puertas', 'CarPlay, Android Auto y climatizador automático.'],
+  ['seg5', IMG + 'seguridad-jimny5p-suzuki.jpg?v=638671097866030000', '6 airbags', 'Frontales, laterales y de cortina en la versión GLX.'],
+  ['esp5', IMG + 'especificaciones-jimny5p-suzuki.jpg?v=638671096320030000', 'ALLGRIP PRO', '2H, 4H y 4L con una palanca directa a la caja de transferencia.']
+];
+
+const VIDEOS = [
+  { tipo: 'mp4', src: 'https://suzukiderco.vtexcrm.com.br/DynamicForm/GetFile?dataEntityInstanceId=MD-cded86fd-b265-11eb-82ac-0e657d7cc5c3&fileName=jimny-p-5-video.mp4', titulo: 'Video oficial Suzuki Colombia', canal: 'Jimny 5 puertas' },
+  { tipo: 'yt', id: 'kQhctXuyN8w', titulo: 'Jimny 5 puertas: prueba a fondo', canal: 'Autos de Primera (Colombia)' },
+  { tipo: 'yt', id: 'HyiUMu-FJU4', titulo: 'Jimny 5 puertas: prueba off-road', canal: 'Reseña en terreno' },
+  { tipo: 'yt', id: '_ULh1MPjzW8', titulo: 'Jimny 3 puertas: un 4x4 de verdad en tamaño mini', canal: 'Autos de Primera (Colombia)' },
+  { tipo: 'yt', id: '0qdXuiBUXRw', titulo: 'Jimny 5 puertas GLX: reseña de lanzamiento', canal: 'NetU Autos (Colombia)' }
+];
+
+const FICHA = [
+  ['Motor'],
+  ['Tipo', 'K15B gasolina, 4 cilindros, 16 válvulas', 'K15B gasolina, 4 cilindros, 16 válvulas'],
+  ['Cilindraje', '1.462 cc', '1.462 cc'],
+  ['Potencia máxima', '100 hp a 6.000 rpm', '100 hp a 6.000 rpm'],
+  ['Torque máximo', '130 Nm a 4.000 rpm', '130 Nm a 4.000 rpm'],
+  ['Diámetro × carrera', '74,0 × 85,0 mm', '74,0 × 85,0 mm'],
+  ['Relación de compresión', '10:1', '10:1'],
+  ['Alimentación', 'Inyección multipunto', 'Inyección multipunto'],
+  ['Transmisión y chasís'],
+  ['Caja', 'Mecánica 5 vel. o automática 4 vel.', 'Mecánica 5 vel. o automática 4 vel.'],
+  ['Tracción', 'ALLGRIP PRO: 2H, 4H y 4L (con bajo)', 'ALLGRIP PRO: 2H, 4H y 4L (con bajo)'],
+  ['Chasís', 'Independiente tipo escalera', 'Independiente tipo escalera'],
+  ['Suspensión', 'Eje rígido con resortes helicoidales adelante y atrás', 'Eje rígido con resortes helicoidales adelante y atrás'],
+  ['Dirección', 'Esferas recirculantes con asistencia eléctrica', 'Esferas recirculantes con asistencia eléctrica'],
+  ['Llantas', '195/80 R15', '195/80 R15'],
+  ['Medidas y capacidades'],
+  ['Largo total', '3.480 mm (3.650 mm con repuesto)', '3.820 mm (3.985 mm con repuesto)'],
+  ['Ancho total', '1.645 mm', '1.645 mm'],
+  ['Alto total', '1.725 mm', '1.720 mm'],
+  ['Distancia entre ejes', '2.250 mm', '2.590 mm'],
+  ['Altura libre al piso', '210 mm', '210 mm'],
+  ['Ángulo de ataque / ventral / salida', '37° / 28° / 49°', '36° / 24° / 50°'],
+  ['Radio de giro', '4,9 m', '5,7 m'],
+  ['Peso vacío', '1.090 – 1.095 kg', '1.185 – 1.215 kg'],
+  ['Peso bruto vehicular', '1.435 kg', '1.545 kg'],
+  ['Pasajeros', '4', '4'],
+  ['Baúl', '85 L (377 L con sillas abatidas)', '211 L (sillas traseras abatibles)'],
+  ['Tanque de gasolina', '40 L (unos 10,5 galones)', '40 L (unos 10,5 galones)'],
+  ['Seguridad'],
+  ['Airbags', '2 frontales', '6 (frontales, laterales y de cortina)'],
+  ['Frenos y control', 'ABS, ESP, frenado LSD', 'ABS, ESP, frenado LSD'],
+  ['Asistencias', 'Arranque en pendiente, control de descenso, paquete ADAS (2027)', 'Arranque en pendiente, control de descenso'],
+  ['Niños', 'Anclajes ISOFIX', 'Anclajes ISOFIX'],
+  ['Estructura', 'Barras laterales contra impactos', 'Barras laterales; carrocería que mitiga lesiones a peatones']
+];
+
+/* ====== utilidades ====== */
+const $ = (s) => document.querySelector(s);
+const pesos = (n) => '$' + Math.round(n).toLocaleString('es-CO');
+const waLink = (num, msg) => `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+const todasVersiones = () => Object.entries(CARROS).flatMap(([k, c]) => c.versiones.map(v => ({ ...v, carro: c.nombre, clave: k })));
+function fotoFallida(img, texto) {
+  const d = document.createElement('div');
+  d.className = 'sinfoto';
+  d.textContent = texto || 'Foto no disponible sin conexión';
+  img.replaceWith(d);
+}
+
+$('#vmSello').href = CONFIG.vibrasMotor;
+
+/* ====== portada y ángulos ====== */
+function dibujarCarro(k) {
+  const c = CARROS[k], [t, d] = c.ejes, [x0, x1] = c.cuerpo, suelo = 222, r = 34;
+  // carrocería cuadrada tipo Jimny (frente a la derecha)
+  $('#carroCuerpo').setAttribute('d',
+    `M${x0} 176 L${x0} 132 L${x0 + 28} 128 L${x0 + 46} 70 L${x1 - 92} 66 L${x1 - 70} 124 L${x1 - 4} 130 L${x1} 176 Z M${x0 - 14} 120 h14 v40 h-14 z M${x0 + 70} 76 L${x0 + 60} 124 M${x1 - 160} 70 L${x1 - 160} 124`);
+  $('#ruedaT').setAttribute('cx', t); $('#ruedaT').setAttribute('cy', suelo - r);
+  $('#ruedaD').setAttribute('cx', d); $('#ruedaD').setAttribute('cy', suelo - r);
+  const rad = (g) => g * Math.PI / 180, L = 120, a = c.angulos;
+  const pd = [d + 18, suelo], pt = [t - 18, suelo];
+  const la = $('#lAtaque'); la.setAttribute('x1', pd[0]); la.setAttribute('y1', pd[1]); la.setAttribute('x2', pd[0] + L * Math.cos(rad(a.ataque))); la.setAttribute('y2', pd[1] - L * Math.sin(rad(a.ataque)));
+  const ls = $('#lSalida'); ls.setAttribute('x1', pt[0]); ls.setAttribute('y1', pt[1]); ls.setAttribute('x2', pt[0] - L * Math.cos(rad(a.salida))); ls.setAttribute('y2', pt[1] - L * Math.sin(rad(a.salida)));
+  const mid = (t + d) / 2, h = Math.tan(rad(a.ventral / 2)) * (d - t) / 2;
+  $('#lVentral').setAttribute('points', `${t + 10},${suelo} ${mid},${suelo - h} ${d - 10},${suelo}`);
+  $('#vAtaque').textContent = a.ataque + '°'; $('#vVentral').textContent = a.ventral + '°'; $('#vSalida').textContent = a.salida + '°';
+}
+
+function elegirCarro(k) {
+  const c = CARROS[k], v = c.versiones[0];
+  document.querySelectorAll('[data-carro]').forEach(b => b.setAttribute('aria-pressed', b.dataset.carro === k));
+  const hero = $('#heroImg');
+  if (hero) { hero.src = c.hero; hero.alt = `Suzuki ${c.nombre}`; }
+  $('#heroPrecio').textContent = pesos(v.precio);
+  $('#heroVersion').textContent = `Desde: ${c.nombre} ${v.nombre}`;
+  $('#claveLargo').textContent = c.largo;
+  dibujarCarro(k);
+  pintarVersiones(k);
+}
+document.querySelectorAll('[data-carro]').forEach(b => b.addEventListener('click', () => elegirCarro(b.dataset.carro)));
+
+/* ====== versiones ====== */
+function pintarVersiones(k) {
+  const c = CARROS[k];
+  document.querySelectorAll('[data-tab]').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === k));
+  const f = $('#versionFoto');
+  if (f) { f.src = c.foto; f.alt = `Suzuki ${c.nombre}`; }
+  $('#listaVersiones').innerHTML = c.versiones.map(v => `
+    <article class="version">
+      <h3>${c.nombre} ${v.nombre}</h3>
+      <div class="p">${pesos(v.precio)}</div>
+      <div class="caja">${v.caja} · 4x4 ALLGRIP PRO con bajo</div>
+      <ul>${v.puntos.map(p => `<li>${p}</li>`).join('')}</ul>
+      <div class="acc">
+        <button class="btn chico" type="button" data-quiero="${c.nombre} ${v.nombre}" data-motivo="Cotización">Lo quiero</button>
+        <button class="btn sec chico" type="button" data-simular="${c.nombre} ${v.nombre}">Calcular cuota</button>
+      </div>
+    </article>`).join('');
+  document.querySelectorAll('[data-simular]').forEach(b => b.addEventListener('click', () => {
+    $('#sVersion').value = b.dataset.simular; $('#sVersion').dispatchEvent(new Event('change'));
+    location.hash = '#cuota';
+  }));
+}
+document.querySelectorAll('[data-tab]').forEach(b => b.addEventListener('click', () => pintarVersiones(b.dataset.tab)));
+$('#versionFoto').addEventListener('error', function () { this.style.display = 'none'; });
+$('#heroImg').addEventListener('error', function () { this.style.visibility = 'hidden'; });
+
+/* ====== galería ====== */
+$('#galeriaFotos').innerHTML = FOTOS.map(([id, src, t, d]) => `
+  <figure><img src="${src}" alt="${t}" loading="lazy" data-foto="${id}"><figcaption><b>${t}</b><span>${d}</span></figcaption></figure>`).join('');
+document.querySelectorAll('[data-foto]').forEach(img => img.addEventListener('error', () => fotoFallida(img)));
+
+/* ====== videos (carga liviana) ====== */
+$('#listaVideos').innerHTML = VIDEOS.map((v, i) => `
+  <div>
+    <button class="video" type="button" data-video="${i}" aria-label="Reproducir: ${v.titulo}">
+      ${v.tipo === 'yt'
+        ? `<img src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="lazy">`
+        : `<img src="${CARROS['5p'].hero}" alt="" loading="lazy">`}
+      <span class="play"><i></i></span>
+    </button>
+    <p class="video-tit">${v.titulo}<span>${v.canal}</span></p>
+  </div>`).join('');
+document.querySelectorAll('[data-video]').forEach(b => b.addEventListener('click', () => {
+  const v = VIDEOS[b.dataset.video];
+  if (v.tipo === 'yt') {
+    b.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&rel=0" title="${v.titulo}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  } else {
+    const vid = document.createElement('video');
+    vid.src = v.src; vid.controls = true; vid.autoplay = true; vid.playsInline = true;
+    vid.addEventListener('error', () => { b.closest('div').innerHTML = `<p class="nota">El video oficial no cargó. Véalo en <a href="https://www.suzukiautos.com.co/modelos/jimny-5-puertas" target="_blank" rel="noopener">suzukiautos.com.co</a>.</p>`; });
+    b.replaceChildren(vid);
+  }
+}, { once: true }));
+
+/* ====== ficha ====== */
+$('#tablaFicha tbody').innerHTML = FICHA.map(f => f.length === 1
+  ? `<tr class="grupo"><th colspan="3" scope="colgroup">${f[0]}</th></tr>`
+  : `<tr><th scope="row">${f[0]}</th><td>${f[1]}</td><td>${f[2]}</td></tr>`).join('');
+
+/* ====== simulador ====== */
+const versiones = todasVersiones();
+const opciones = versiones.map(v => `<option value="${v.carro} ${v.nombre}">${v.carro} ${v.nombre} — ${pesos(v.precio)}</option>`).join('');
+$('#sVersion').innerHTML = opciones;
+const numero = (s) => Number(String(s).replace(/[^\d]/g, '')) || 0;
+
+let ultimaSimulacion = null;
+function calcular() {
+  const precio = numero($('#sPrecio').value);
+  const pIni = Number($('#sInicial').value);
+  const n = Number($('#sPlazo').value);
+  const i = Math.max(0, Number($('#sTasa').value) || 0) / 100;
+  const inicial = precio * pIni / 100, financiar = precio - inicial;
+  const cuota = i === 0 ? financiar / n : financiar * i / (1 - Math.pow(1 + i, -n));
+  $('#sInicialTxt').textContent = pIni + '%';
+  $('#rCuota').textContent = precio ? pesos(cuota) : '—';
+  $('#rInicial').textContent = pesos(inicial);
+  $('#rFinanciar').textContent = pesos(financiar);
+  $('#rTotal').textContent = pesos(cuota * n);
+  ultimaSimulacion = { version: $('#sVersion').value, texto: `Precio ${pesos(precio)} · inicial ${pIni}% (${pesos(inicial)}) · ${n} meses a ${$('#sTasa').value}% M.V. · cuota aprox. ${pesos(cuota)}` };
+}
+$('#sVersion').addEventListener('change', () => {
+  const v = versiones.find(x => `${x.carro} ${x.nombre}` === $('#sVersion').value);
+  if (v) $('#sPrecio').value = pesos(v.precio);
+  calcular();
+});
+$('#sPrecio').addEventListener('input', (e) => { const n = numero(e.target.value); e.target.value = n ? pesos(n) : ''; calcular(); });
+['#sInicial', '#sPlazo', '#sTasa'].forEach(s => $(s).addEventListener('input', calcular));
+$('#sVersion').dispatchEvent(new Event('change'));
+
+/* ====== CONTROL DE SUGERIDO (Vibras Motor) ====== */
+function horaBogota() {
+  const p = new Intl.DateTimeFormat('es-CO', { timeZone: 'America/Bogota', year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+  const g = (t) => (p.find(x => x.type === t) || {}).value;
+  return { codigo: g('year') + g('month') + g('day'), texto: `${g('day')}/${g('month')}/20${g('year')} ${g('hour')}:${g('minute')} (hora Colombia)` };
+}
+function codigoReferido() {
+  const n = crypto.getRandomValues(new Uint16Array(1))[0] % 9000 + 1000;
+  return `${CONFIG.prefijo}-${horaBogota().codigo}-${n}`;
+}
+const esc = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const sg = $('#sugerido'), sgIn = $('#sgIn');
+const cabSg = (t) => `<div class="hoja-cab"><h3 id="sgTit">${t}</h3><button class="cerrar" type="button" aria-label="Cerrar">×</button></div>`;
+sg.addEventListener('click', (e) => { if (e.target === sg || e.target.closest('.cerrar')) sg.close(); });
+
+function datosCliente(d, cod) {
+  const v = versiones.find(x => `${x.carro} ${x.nombre}` === d.version);
+  return `Código de referido: *${cod}*\n` +
+    `Fecha: ${horaBogota().texto}\n\n` +
+    `Vehículo: Suzuki ${d.version}${v ? ` ${AÑO_MODELO} (${pesos(v.precio)})` : ''}\n` +
+    `Solicitud: ${d.motivo}\n` +
+    `Cliente: ${d.nombre}\nCelular: ${d.cel}\nMunicipio: ${d.ciudad}\nForma de pago: ${d.pago}\n` +
+    (d.simulacion ? `Simulación: ${d.simulacion}\n` : '') +
+    (d.nota ? `Comentario: ${d.nota}\n` : '');
+}
+const msgHarold = (d, cod) => `🔔 *Nuevo cliente Vibras Motor — Jimny ${AÑO_MODELO}*\n` + datosCliente(d, cod) +
+  `\nHola ${CONFIG.harold.nombre}, vi el Jimny en su app y quiero que me atiendan.`;
+const msgConcesionario = (d, cod) => `🚙 *Cliente referido por Vibras Motor*\n` + datosCliente(d, cod) +
+  `\nAl asesor: este cliente llega con el código de arriba. Si se cierra la venta aplica la comisión acordada con Vibras Positivas HM (${CONFIG.harold.nombre}, ${CONFIG.harold.whatsapp.replace(/^57/, '')}).`;
+
+function abrirSugerido(pre = {}) {
+  const versionIni = pre.version || $('#sVersion').value;
+  sgIn.innerHTML = cabSg(pre.motivo === 'Prueba de manejo' ? 'Prueba de manejo' : 'Lo quiero') + `
+    <p class="aviso" style="margin-top:0">Al enviar recibe su código de referido Vibras Motor.</p>
+    <div class="campos">
+      <div><label for="qNom">Nombre</label><input id="qNom" autocomplete="name"></div>
+      <div><label for="qCel">Celular</label><input id="qCel" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 123 4567"></div>
+      <div><label for="qCiu">Municipio</label><input id="qCiu" placeholder="Caucasia, Montería, Sincelejo…"></div>
+      <div><label for="qVer">Versión</label><select id="qVer">${opciones}<option value="Jimny, aún no sé la versión">Todavía no sé, quiero asesoría</option></select></div>
+      <div><label for="qMot">Qué necesita</label><select id="qMot"><option>Cotización</option><option>Prueba de manejo</option><option>Crédito</option><option>Retoma de mi carro actual</option></select></div>
+      <div><label for="qPago">Forma de pago</label><select id="qPago"><option>Crédito</option><option>Contado</option><option>Entrego mi carro en parte de pago</option><option>Aún no sé</option></select></div>
+    </div>
+    <div style="margin-top:14px"><label for="qNota">Comentario (opcional)</label><input id="qNota" placeholder="Color, fecha para la prueba, desde el exterior…"></div>
+    ${pre.simulacion ? `<p class="aviso">Se enviará su simulación: ${esc(pre.simulacion)}</p>` : ''}
+    <label class="consent"><input type="checkbox" id="qOk"><span>Autorizo que mis datos se envíen a ${esc(CONFIG.harold.nombre)} (Vibras Motor, Vibras Positivas HM) y al concesionario Suzuki solo para atender esta solicitud, según la Ley 1581 de 2012. La app no guarda mis datos.</span></label>
+    <p class="aviso" id="qErr" role="alert" style="color:var(--lima);min-height:1.2em"></p>
+    <button class="btn" type="button" id="qEnviar" style="width:100%;justify-content:center">Recibir mi código y enviar</button>`;
+  $('#qVer').value = versiones.some(x => `${x.carro} ${x.nombre}` === versionIni) ? versionIni : $('#qVer').options[0].value;
+  if (pre.motivo) $('#qMot').value = pre.motivo;
+  $('#qEnviar').addEventListener('click', () => {
+    const d = { nombre: $('#qNom').value.trim(), cel: $('#qCel').value.trim(), ciudad: $('#qCiu').value.trim(),
+      version: $('#qVer').value, motivo: $('#qMot').value, pago: $('#qPago').value, nota: $('#qNota').value.trim(), simulacion: pre.simulacion || '' };
+    const digitos = d.cel.replace(/\D/g, '');
+    if (!d.nombre || !d.ciudad || digitos.length < 10) { $('#qErr').textContent = 'Escriba su nombre, su municipio y un celular de 10 números.'; return; }
+    if (!$('#qOk').checked) { $('#qErr').textContent = 'Marque la autorización de datos para poder enviar.'; return; }
+    const cod = codigoReferido();
+    const aHarold = waLink(CONFIG.harold.whatsapp, msgHarold(d, cod));
+    window.open(aHarold, '_blank', 'noopener');
+    mostrarCodigo(d, cod, aHarold);
+  });
+  if (!sg.open) sg.showModal();
+  sgIn.scrollTop = 0;
+}
+
+function mostrarCodigo(d, cod, aHarold) {
+  const hayConc = !!CONFIG.concesionario.whatsapp;
+  sgIn.innerHTML = cabSg('Su código') + `
+    <div class="codigo">${cod}</div>
+    <p class="aviso">Guárdelo y muéstrelo en el concesionario al comprar. Así queda claro que llegó por Vibras Motor.</p>
+    <div class="paso-wa hecho" id="pH"><span class="n">1</span><div>
+      <b>Avisar a su asesor Vibras Motor</b>
+      <p>${esc(CONFIG.harold.nombre)} recibe sus datos y su código${hayConc ? '' : ' y lo conecta con el concesionario Suzuki'}. Si WhatsApp no se abrió, tóquelo aquí y oprima enviar.</p>
+      <a class="btn chico" id="btnH" href="${aHarold}" target="_blank" rel="noopener">Enviar a ${esc(CONFIG.harold.nombre)}</a></div></div>
+    ${hayConc ? `<div class="paso-wa" id="pC"><span class="n">2</span><div>
+      <b>Enviar al ${esc(CONFIG.concesionario.nombre)}</b>
+      <p>Después de avisarle a su asesor, envíe la misma solicitud al concesionario.</p>
+      <a class="btn sec chico" id="btnC" aria-disabled="true" href="${waLink(CONFIG.concesionario.whatsapp, msgConcesionario(d, cod))}" target="_blank" rel="noopener">Enviar al concesionario</a></div></div>` : ''}`;
+  if (hayConc) {
+    // el paso 2 se habilita cuando se abrió el WhatsApp de Harold (ya se abrió una vez al enviar)
+    const habilitar = () => { $('#btnC').removeAttribute('aria-disabled'); };
+    setTimeout(habilitar, 2500);
+    $('#btnH').addEventListener('click', habilitar);
+    $('#btnC').addEventListener('click', () => $('#pC').classList.add('hecho'));
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-quiero]');
+  if (!b) return;
+  abrirSugerido({ version: b.dataset.quiero || undefined, motivo: b.dataset.motivo });
+});
+$('#waTop').addEventListener('click', (e) => { e.preventDefault(); abrirSugerido({ motivo: 'Cotización' }); });
+$('#btnSimulacion').addEventListener('click', () => abrirSugerido({ version: ultimaSimulacion.version, motivo: 'Crédito', simulacion: ultimaSimulacion.texto }));
+
+/* ====== navegación inferior activa ====== */
+const enlaces = [...document.querySelectorAll('.tabbar a')];
+const secciones = enlaces.map(a => document.querySelector(a.getAttribute('href')));
+const obs = new IntersectionObserver((ents) => {
+  ents.forEach(e => { if (e.isIntersecting) { enlaces.forEach(a => a.classList.toggle('activo', a.getAttribute('href') === '#' + e.target.id)); } });
+}, { rootMargin: '-45% 0px -50% 0px' });
+secciones.forEach(s => s && obs.observe(s));
+
+/* ====== instalar como app ====== */
+let evtInstalar = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); evtInstalar = e;
+  try { if (sessionStorage.getItem('noInstalar')) return; } catch (_) {}
+  setTimeout(() => $('#instalar').classList.add('ver'), 6000);
+});
+$('#btnInstalar').addEventListener('click', async () => {
+  $('#instalar').classList.remove('ver');
+  if (evtInstalar) { evtInstalar.prompt(); evtInstalar = null; }
+});
+$('#btnCerrarInst').addEventListener('click', () => {
+  $('#instalar').classList.remove('ver');
+  try { sessionStorage.setItem('noInstalar', '1'); } catch (_) {}
+});
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+
+elegirCarro('3p');
+</script>
+</body>
+</html>
