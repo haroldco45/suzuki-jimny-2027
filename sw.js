@@ -1,4 +1,4 @@
-const CACHE = 'jimny-2027-v2';
+const CACHE = 'jimny-2027-v3';
 const FOTOS = 'jimny-2027-fotos-v1';
 const ARCHIVOS = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png'];
 const HOSTS_FOTOS = ['suzukiautos.com.co', 'vtexassets.com', 'vteximg.com.br', 'i.ytimg.com'];
