@@ -188,6 +188,15 @@ dialog::backdrop{background:rgba(0,0,0,.65)}
 .vm-sello{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;color:var(--arena2);text-decoration:none;border:1px solid var(--olivo3);border-radius:999px;padding:6px 12px;margin-top:10px}
 .vm-sello i{width:10px;height:10px;border-radius:50%;background:#EB0A1E}
 
+.mi-codigo{display:none;margin-top:26px;padding:20px 22px;border-radius:18px;background:var(--lima);color:var(--olivo)}
+.mi-codigo.ver{display:block}
+.mi-codigo b.c{display:block;font-size:clamp(1.4rem,6vw,2rem);font-stretch:118%;font-weight:900;margin:2px 0 8px;white-space:nowrap}
+.mi-codigo p{margin:.2em 0 .8em;font-weight:600}
+.mi-codigo .btn{background:var(--olivo);color:var(--arena)}
+.mi-codigo .btn.sec{background:transparent;color:var(--olivo);box-shadow:inset 0 0 0 2px var(--olivo)}
+.compra{margin-top:30px;padding:22px;border-radius:18px;border:2px solid var(--lima)}
+.compra h3{font-size:1.5rem}
+.msg-asesor{white-space:pre-wrap;background:var(--olivo);border-radius:12px;padding:12px;font-size:.88rem;color:var(--arena2);margin:8px 0}
 .cargando{animation:aparece .9s ease-out both}
 @keyframes aparece{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;scroll-behavior:auto !important}}
@@ -401,6 +410,20 @@ dialog::backdrop{background:rgba(0,0,0,.65)}
     <div class="acciones" style="margin-top:18px">
       <button class="btn" type="button" data-quiero="" data-motivo="Cotización">Quiero cotizar</button>
       <button class="btn sec" type="button" data-quiero="" data-motivo="Prueba de manejo">Pedir prueba de manejo</button>
+    </div>
+    <div class="mi-codigo" id="miCodigo" aria-live="polite">
+      <span>Su código de referido Vibras Motor</span>
+      <b class="c" id="miCodigoTxt"></b>
+      <p id="miCodigoDet"></p>
+      <div class="acciones" style="margin-top:0">
+        <button class="btn chico" type="button" data-copiar-codigo>Copiar código</button>
+        <button class="btn sec chico" type="button" data-compra>Ya voy a comprar</button>
+      </div>
+    </div>
+    <div class="compra" id="compra">
+      <h3>¿Ya va a comprar su Jimny?</h3>
+      <p style="color:var(--arena2)">Al separar, pagar o recibir el carro, entregue su código de referido al asesor del concesionario y pídale que lo anote en la orden de pedido. Luego confírmelo aquí: así su asesor Vibras Motor lo acompaña hasta la entrega.</p>
+      <button class="btn" type="button" data-compra>Registrar mi compra con el código</button>
     </div>
     <a class="vm-sello" id="vmSello" href="#" target="_blank" rel="noopener"><i></i>Una app de la vitrina Vibras Motor</a>
   </div>
@@ -739,7 +762,7 @@ function abrirSugerido(pre = {}) {
     </div>
     <div style="margin-top:14px"><label for="qNota">Comentario (opcional)</label><input id="qNota" placeholder="Color, fecha para la prueba, desde el exterior…"></div>
     ${pre.simulacion ? `<p class="aviso">Se enviará su simulación: ${esc(pre.simulacion)}</p>` : ''}
-    <label class="consent"><input type="checkbox" id="qOk"><span>Autorizo que mis datos se envíen a ${esc(CONFIG.harold.nombre)} (Vibras Motor, Vibras Positivas HM) y al concesionario Suzuki solo para atender esta solicitud, según la Ley 1581 de 2012. La app no guarda mis datos.</span></label>
+    <label class="consent"><input type="checkbox" id="qOk"><span>Autorizo que mis datos se envíen a ${esc(CONFIG.harold.nombre)} (Vibras Motor, Vibras Positivas HM) y al concesionario Suzuki solo para atender esta solicitud, según la Ley 1581 de 2012. La app solo guarda mi código y la versión en este celular, para usarlo al comprar.</span></label>
     <p class="aviso" id="qErr" role="alert" style="color:var(--lima);min-height:1.2em"></p>
     <button class="btn" type="button" id="qEnviar" style="width:100%;justify-content:center">Recibir mi código y enviar</button>`;
   $('#qVer').value = versiones.some(x => `${x.carro} ${x.nombre}` === versionIni) ? versionIni : $('#qVer').options[0].value;
@@ -753,6 +776,7 @@ function abrirSugerido(pre = {}) {
     const cod = codigoReferido();
     const aHarold = waLink(CONFIG.harold.whatsapp, msgHarold(d, cod));
     window.open(aHarold, '_blank', 'noopener');
+    guardarCodigo({ codigo: cod, version: d.version, nombre: d.nombre, cel: d.cel, ciudad: d.ciudad, fecha: horaBogota().texto });
     mostrarCodigo(d, cod, aHarold);
   });
   if (!sg.open) sg.showModal();
@@ -763,7 +787,8 @@ function mostrarCodigo(d, cod, aHarold) {
   const hayConc = !!CONFIG.concesionario.whatsapp;
   sgIn.innerHTML = cabSg('Su código') + `
     <div class="codigo">${cod}</div>
-    <p class="aviso">Guárdelo y muéstrelo en el concesionario al comprar. Así queda claro que llegó por Vibras Motor.</p>
+    <div class="acciones" style="margin:6px 0 4px"><button class="btn sec chico" type="button" data-copiar-codigo>Copiar código</button>${navigator.share ? '<button class="btn sec chico" type="button" data-compartir-codigo>Guardarlo en mis chats</button>' : ''}</div>
+    <p class="aviso">Queda guardado en este celular. Cuando vaya a comprar, entrégueselo al asesor del concesionario y toque «Registrar mi compra» en la app.</p>
     <div class="paso-wa hecho" id="pH"><span class="n">1</span><div>
       <b>Avisar a su asesor Vibras Motor</b>
       <p>${esc(CONFIG.harold.nombre)} recibe sus datos y su código${hayConc ? '' : ' y lo conecta con el concesionario Suzuki'}. Si WhatsApp no se abrió, tóquelo aquí y oprima enviar.</p>
@@ -771,7 +796,11 @@ function mostrarCodigo(d, cod, aHarold) {
     ${hayConc ? `<div class="paso-wa" id="pC"><span class="n">2</span><div>
       <b>Enviar al ${esc(CONFIG.concesionario.nombre)}</b>
       <p>Después de avisarle a su asesor, envíe la misma solicitud al concesionario.</p>
-      <a class="btn sec chico" id="btnC" aria-disabled="true" href="${waLink(CONFIG.concesionario.whatsapp, msgConcesionario(d, cod))}" target="_blank" rel="noopener">Enviar al concesionario</a></div></div>` : ''}`;
+      <a class="btn sec chico" id="btnC" aria-disabled="true" href="${waLink(CONFIG.concesionario.whatsapp, msgConcesionario(d, cod))}" target="_blank" rel="noopener">Enviar al concesionario</a></div></div>` : ''}
+    <div class="paso-wa"><span class="n">${hayConc ? 3 : 2}</span><div>
+      <b>Al comprar, entregue su código</b>
+      <p>Cuando separe, pague o reciba el carro, dígale al asesor su código y confírmelo en la app.</p>
+      <button class="btn sec chico" type="button" data-compra>Registrar mi compra</button></div></div>`;
   if (hayConc) {
     // el paso 2 se habilita cuando se abrió el WhatsApp de Harold (ya se abrió una vez al enviar)
     const habilitar = () => { $('#btnC').removeAttribute('aria-disabled'); };
@@ -781,12 +810,108 @@ function mostrarCodigo(d, cod, aHarold) {
   }
 }
 
+/* ====== CÓDIGO GUARDADO Y REGISTRO DE COMPRA ====== */
+const CLAVE_CODIGO = 'jimny2027-vm-codigo';
+const PATRON_CODIGO = new RegExp('^' + CONFIG.prefijo + '-\\d{6}-\\d{4}$');
+function leerCodigo() { try { return JSON.parse(localStorage.getItem(CLAVE_CODIGO) || 'null'); } catch (_) { return null; } }
+function guardarCodigo(o) { try { localStorage.setItem(CLAVE_CODIGO, JSON.stringify(o)); } catch (_) {} pintarMiCodigo(); }
+function pintarMiCodigo() {
+  const c = leerCodigo();
+  $('#miCodigo').classList.toggle('ver', !!c);
+  if (!c) return;
+  $('#miCodigoTxt').textContent = c.codigo;
+  $('#miCodigoDet').textContent = (c.version ? `Suzuki ${c.version} · ` : '') + `generado el ${c.fecha || ''}`;
+  $('#waTop').lastChild.textContent = ' Mi código';
+}
+async function copiarTexto(t, boton) {
+  try { await navigator.clipboard.writeText(t); }
+  catch (_) { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); } catch (e) {} a.remove(); }
+  if (boton) { const o = boton.textContent; boton.textContent = '¡Copiado!'; setTimeout(() => boton.textContent = o, 1800); }
+}
+
+// Código que llega en el enlace: ...?codigo=VM-SUZ-261004-4821
+(() => {
+  const q = new URLSearchParams(location.search).get('codigo');
+  if (q && PATRON_CODIGO.test(q.trim().toUpperCase()) && !leerCodigo()) guardarCodigo({ codigo: q.trim().toUpperCase(), fecha: horaBogota().texto });
+})();
+
+const msgAsesor = (r) => `Hola, voy a comprar el Suzuki ${r.version} ${AÑO_MODELO}.\n` +
+  `Llego referido por Vibras Motor (Vibras Positivas HM, ${CONFIG.harold.nombre}).\n` +
+  `Mi código de referido es: *${r.codigo}*\n` +
+  `Por favor anótelo en la orden de pedido y en la factura. Gracias.`;
+const msgCompraHarold = (r) => `✅ *Compra con código de referido — Jimny ${AÑO_MODELO}*\n` +
+  `Código: *${r.codigo}*\n` +
+  `Fecha: ${horaBogota().texto}\n\n` +
+  `Cliente: ${r.nombre}\nCelular: ${r.cel}\n` +
+  `Vehículo: Suzuki ${r.version}\nEstado: ${r.estado}\n` +
+  `Concesionario / sede: ${r.sede}\nAsesor que lo atiende: ${r.asesor || 'sin dato'}\n` +
+  (r.factura ? `Factura u orden de pedido: ${r.factura}\n` : '') +
+  `\nHola ${CONFIG.harold.nombre}, le confirmo que voy a comprar con mi código de referido.`;
+
+function abrirCompra() {
+  const c = leerCodigo() || {};
+  sgIn.innerHTML = cabSg('Registrar mi compra') + `
+    <p class="aviso" style="margin-top:0">Confírmenos su compra con el código de referido. Si no tiene código, déjelo vacío y le generamos uno.</p>
+    <div class="campos">
+      <div><label for="rCod">Código de referido</label><input id="rCod" value="${esc(c.codigo || '')}" placeholder="${CONFIG.prefijo}-261004-4821" autocapitalize="characters"></div>
+      <div><label for="rNom">Nombre del comprador</label><input id="rNom" value="${esc(c.nombre || '')}" autocomplete="name"></div>
+      <div><label for="rCel">Celular</label><input id="rCel" type="tel" inputmode="tel" value="${esc(c.cel || '')}"></div>
+      <div><label for="rVer">Versión que compra</label><select id="rVer">${opciones}</select></div>
+      <div><label for="rEst">Estado de la compra</label><select id="rEst"><option>Voy a separar el carro</option><option>Ya lo separé / firmé la orden</option><option>Ya pagué o me aprobaron el crédito</option><option>Ya me lo entregaron</option></select></div>
+      <div><label for="rSede">Concesionario y sede</label><input id="rSede" placeholder="Ej. Autozen Montería"></div>
+      <div><label for="rAse">Asesor que lo atiende</label><input id="rAse" placeholder="Nombre del vendedor"></div>
+      <div><label for="rFac">N.º de orden o factura (opcional)</label><input id="rFac"></div>
+    </div>
+    <p class="aviso" id="rErr" role="alert" style="color:var(--lima);min-height:1.2em"></p>
+    <button class="btn" type="button" id="rEnviar" style="width:100%;justify-content:center">Confirmar compra a ${esc(CONFIG.harold.nombre)}</button>`;
+  if (c.version && versiones.some(x => `${x.carro} ${x.nombre}` === c.version)) $('#rVer').value = c.version;
+  $('#rEnviar').addEventListener('click', () => {
+    const r = { codigo: $('#rCod').value.trim().toUpperCase(), nombre: $('#rNom').value.trim(), cel: $('#rCel').value.trim(),
+      version: $('#rVer').value, estado: $('#rEst').value, sede: $('#rSede').value.trim(), asesor: $('#rAse').value.trim(), factura: $('#rFac').value.trim() };
+    if (r.codigo && !PATRON_CODIGO.test(r.codigo)) { $('#rErr').textContent = `El código debe tener la forma ${CONFIG.prefijo}-261004-4821. Revíselo o déjelo vacío.`; return; }
+    if (!r.nombre || r.cel.replace(/\D/g, '').length < 10 || !r.sede) { $('#rErr').textContent = 'Escriba su nombre, un celular de 10 números y el concesionario o sede.'; return; }
+    if (!r.codigo) r.codigo = codigoReferido();
+    guardarCodigo({ ...(leerCodigo() || {}), codigo: r.codigo, version: r.version, nombre: r.nombre, cel: r.cel, fecha: (leerCodigo() || {}).fecha || horaBogota().texto });
+    const aH = waLink(CONFIG.harold.whatsapp, msgCompraHarold(r));
+    window.open(aH, '_blank', 'noopener');
+    const txtAsesor = msgAsesor(r);
+    sgIn.innerHTML = cabSg('Compra registrada') + `
+      <div class="codigo">${r.codigo}</div>
+      <div class="paso-wa hecho"><span class="n">1</span><div>
+        <b>Confirmación a ${esc(CONFIG.harold.nombre)}</b>
+        <p>Si WhatsApp no se abrió, tóquelo aquí y oprima enviar.</p>
+        <a class="btn chico" href="${aH}" target="_blank" rel="noopener">Enviar confirmación</a></div></div>
+      <div class="paso-wa"><span class="n">2</span><div>
+        <b>Entregue el código al asesor${r.asesor ? ' ' + esc(r.asesor) : ''}</b>
+        <p>Muéstrele esta pantalla o mándele este mensaje, y pídale que lo anote en la orden de pedido y en la factura.</p>
+        <div class="msg-asesor">${esc(txtAsesor.replace(/\*/g, ''))}</div>
+        <div class="acciones" style="margin-top:6px">
+          <button class="btn sec chico" type="button" id="cpAsesor">Copiar mensaje</button>
+          ${CONFIG.concesionario.whatsapp ? `<a class="btn sec chico" href="${waLink(CONFIG.concesionario.whatsapp, txtAsesor)}" target="_blank" rel="noopener">Enviar al concesionario</a>` : ''}
+        </div></div></div>`;
+    $('#cpAsesor').addEventListener('click', (e) => copiarTexto(txtAsesor.replace(/\*/g, ''), e.currentTarget));
+  });
+  if (!sg.open) sg.showModal();
+  sgIn.scrollTop = 0;
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-compra]')) { abrirCompra(); return; }
+  const cc = e.target.closest('[data-copiar-codigo]');
+  if (cc) { const c = leerCodigo(); if (c) copiarTexto(c.codigo, cc); return; }
+  if (e.target.closest('[data-compartir-codigo]')) {
+    const c = leerCodigo(); if (c) navigator.share({ title: 'Mi código Jimny 2027', text: `Mi código de referido Vibras Motor para el Suzuki Jimny 2027: ${c.codigo}`, url: location.origin + location.pathname + '?codigo=' + c.codigo }).catch(() => {});
+    return;
+  }
+});
+pintarMiCodigo();
+
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-quiero]');
   if (!b) return;
   abrirSugerido({ version: b.dataset.quiero || undefined, motivo: b.dataset.motivo });
 });
-$('#waTop').addEventListener('click', (e) => { e.preventDefault(); abrirSugerido({ motivo: 'Cotización' }); });
+$('#waTop').addEventListener('click', (e) => { e.preventDefault(); if (leerCodigo()) { document.getElementById('miCodigo').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; } abrirSugerido({ motivo: 'Cotización' }); });
 $('#btnSimulacion').addEventListener('click', () => abrirSugerido({ version: ultimaSimulacion.version, motivo: 'Crédito', simulacion: ultimaSimulacion.texto }));
 
 /* ====== navegación inferior activa ====== */
